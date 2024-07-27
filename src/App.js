@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import React, { Component } from 'react';
+import ComponentA from './ComponentA';
+import ErrorBoundry from './ErrorBoundry';
+// import TimerOne from './Timer/TimerOne';
+
+
+
+class App extends React.Component{
+  // constructor(){
+  //   super();
+  //   this.state={
+  //    timerOn:false
+  //   }
+  // }
+  // handleTimerOn=()=>{
+
+  //   this.setState((prevState) => ({ timerOn:!prevState.timerOn }))
+  // } 
+  render(){ 
+    return (
+      <>
+
+        <ErrorBoundry>
+            <ComponentA/>
+        </ErrorBoundry>     
+  
+        {/* <button onClick={this.handleMount}>{this.state.mount?"UN-MOUNT":"MOUNT"}</button>
+        {this.state.mount?<TimerOne/>:null} */}
+       
+        {/* <TimerOne timerOn={this.state.timerOn}/>
+        <button onClick={this.handleTimerOn}>{this.state.timerOn ? "STOP" : "START"}</button> */}
+       
+
+
+      </>
+    );
+  }
+ 
 }
 
 export default App;
+
+
+
